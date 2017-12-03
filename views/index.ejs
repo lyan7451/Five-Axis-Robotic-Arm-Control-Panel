@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <title>Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+  </head>
+  
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+
+          $(document).ready(function(){
+              
+              //Button click action
+                  //
+                  $('#turnleft1').click(function(){
+                    $.post('/turnleft1');
+                  });
+                  $('#turnright1').click(function(){
+                    $.post('/turnright1');
+                  });
+                  //
+                  $('#up2').click(function(){
+                    $.post('/up2');
+                  });
+                  $('#down2').click(function(){
+                    $.post('/down2');
+                  });
+                  //
+                  $('#up3').click(function(){
+                    $.post('/up3');
+                  });
+                  $('#down3').click(function(){
+                    $.post('/down3');
+                  });    
+                  //
+                  $('#up4').click(function(){
+                    $.post('/up4');
+                  });
+                  $('#down4').click(function(){
+                    $.post('/down4');
+                  });
+                  // grasp
+                  $('#Grasp').click(function(){
+                    $.post('/Grasp');
+                  });
+                  $('#Loosen').click(function(){
+                    $.post('/Loosen');
+                  });
+                  //Macro Function
+                  $('#MacroFun').click(function(){
+                    $.post('/MacroFun');
+                  });
+                  //Reset Motor
+                  $('#reset').click(function(){
+                    $.post('/reset');
+                  });
+              //Button click action end
+
+              //input form action
+                $('#angle1').on('click',function(e){
+                   e.preventDefault();
+                    var a1 = $('#a1').val();
+                   $.ajax({
+                      url:'/angle1',
+                      type:"POST",
+                      dataType: 'json',
+                      data:{a1: a1},
+                      success: function(data){
+                        alert("post success");
+                        console.log(a1);
+                      },
+                      error: function(err){
+                        console.log('err in AJAX');
+                        console.log(err);
+                      }
+                   });
+                });
+
+                $('#angle2').on('click',function(e){
+                   e.preventDefault();
+                    var a2 = $('#a2').val();
+                   $.ajax({
+                      url:'/angle2',
+                      type:"POST",
+                      dataType: 'json',
+                      data:{a2: a2},
+                      success: function(data){
+                        alert("post success");
+                        console.log(a2);
+                      },
+                      error: function(err){
+                        console.log('err in AJAX');
+                        console.log(err);
+                      }
+                   });
+                });
+                 $('#angle3').on('click',function(e){
+                   e.preventDefault();
+                    var a3 = $('#a3').val();
+                   $.ajax({
+                      url:'/angle3',
+                      type:"POST",
+                      dataType: 'json',
+                      data:{a3: a3},
+                      success: function(data){
+                        alert("post success");
+                        console.log(a3);
+                      },
+                      error: function(err){
+                        console.log('err in AJAX');
+                        console.log(err);
+                      }
+                   });
+                });                   
+                $('#angle4').on('click',function(e){
+                   e.preventDefault();
+                    var a4 = $('#a4').val();
+                   $.ajax({
+                      url:'/angle4',
+                      type:"POST",
+                      dataType: 'json',
+                      data:{a4: a4},
+                      success: function(data){
+                        alert("post success");
+                        console.log(a4);
+                      },
+                      error: function(err){
+                        console.log('err in AJAX');
+                        console.log(err);
+                      }
+                   });
+                });
+               
+              //input form action end
+          });
+
+        </script>
+    
+<body>
+  <!--主頁面-->
+  
+    <!--標題-->
+      <div class="navbar">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="jumbotron-fluid">
+                <div class="title text-center">
+                  <h1>五軸手臂的製作與遠端控制</h1> 
+                  <p>控制面板</p>
+                </div>                 
+              </div> 
+            </div>
+      </div>
+    <!--控制面板-->
+    <div class="container">
+      <div class="controlpanel">
+            <!--axis1-->
+            <div class="col-md-4 col-sm-6 col-xs-4">
+              <div class="block">
+                
+                <div class="text-center">
+                  <div class="card">
+                    <div class="card-header">Axis1</div>
+                    <div class="card-body">
+                      <div id="turnleft1" class="up">
+                        <button type = "button" class="btn btn-primary btnsize">左</button>
+                      </div>
+                      <div id="turnright1" class="down">
+                        <button type = "button" class="btn btn-primary btnsize">右</button>
+                      </div>
+                      <!--input angle1-->
+                      <div class="col-md-8 col-xs-12 submitangle">
+                        <div class="center-block input-group input-group-md input-group-sm">
+                          <input id="a1" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
+                          <span class="input-group-btn">
+                          <button id="angle1" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
+                          </span>                         
+                        </div>
+                      </div>
+                      <!--input angle1 end-->
+                    </div><!--card body-->
+                  </div>
+                  <!--card end-->
+                </div>                 
+                  
+                
+              </div>
+            </div>
+            <!--axis2-->
+            <div class="col-md-4 col-sm-6 col-xs-4">
+              <div class="block">
+                <div class="text-center">
+                  <div class="card-header">Axis2</div>
+                  <div class="card-body">
+                    <div id="up2" class="up">
+                      <button type = "button" class="btn btn-primary btnsize">上</button>
+                    </div>
+                    <div id="down2" class="down">
+                      <button type = "button" class="btn btn-primary btnsize">下</button>
+                    </div>
+                    <!--input angle2-->
+                    <div class="col-md-8 col-xs-12 submitangle">
+                      <div class="center-block input-group input-group-md input-group-sm">
+                        <input id="a2" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
+                        <span class="input-group-btn">
+                          <button id="angle2" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
+                        </span>                        
+                      </div>
+                    </div>
+                    <!--input angle2 end-->
+                  </div>
+                </div>
+                  
+                
+              </div>              
+            </div>
+            <!--axis3-->
+            <div class="col-md-4 col-sm-6 col-xs-4">
+              <div class="block">
+                <div class="text-center">
+                  <div class="card-header">Axis3</div>
+                  <div id="up3" class="up">
+                    <button type = "button" class="btn btn-primary btnsize">上</button>
+                  </div>
+                  <div id="down3" class="down">
+                    <button type = "button" class="btn btn-primary btnsize">下</button>
+                  </div>
+                  <!--input angle3-->
+                  <div class="col-md-8 col-xs-12 submitangle">
+                    <div class="center-block input-group input-group-md input-group-sm">
+                      <input id="a3" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
+                      
+                      <span class="input-group-btn">
+                        <button id="angle3" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
+                      </span>  
+                                            
+                    </div>
+                  </div>
+                  <!--input angle3 end-->
+                </div>
+                  
+                
+              </div> 
+            </div>
+            <!--axis4-->
+            <div class="col-md-4 col-sm-6 col-xs-4">
+              <div class="block">
+                <div class="text-center">
+                  <div class="card-header">Axis4</div>
+                  <div id="up4" class="up">
+                    <button type = "button" class="btn btn-primary btnsize">上</button>
+                  </div>
+                  <div id="down4" class="down">
+                    <button type = "button" class="btn btn-primary btnsize">下</button>
+                  </div>
+                  <!--input angle4-->
+                  <div class="col-md-8 col-xs-12 submitangle">
+                    <div class="center-block input-group input-group-md input-group-sm">
+                      <input id="a4" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
+                      <span class="input-group-btn">
+                      <button id="angle4" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
+                      </span>                                             
+                    </div>
+                  </div>
+                  <!--input angle4 end-->
+                </div>
+                  
+                
+              </div>      
+            </div> 
+            <!--axis5-->
+            <div class="col-md-4 col-sm-6 col-xs-4">
+              <div class="block">
+                <div class="text-center">
+                  <div class="card-header">Axis5</div>
+                  <div id="Grasp" class="up">
+                    <button type = "button" class="btn btn-primary btnsize">Grasp</button>
+                  </div>
+                  <div id="Loosen" class="down">
+                    <button type = "button" class="btn btn-primary btnsize">Loosen</button>
+                  </div>
+                </div>
+                
+                  
+
+                </div>
+               
+            </div>
+            <!--MacroFun-->
+            <div class="col-md-4 col-sm-6 col-xs-4">
+              <div class="block">
+                  <div class="text-center">
+                    <div class="card-header">MacroFunction</div>
+                    <div id="MacroFun" class="up">
+                      <button type = "button" class="btn btn-primary btnsize">MacroFun</button>
+                    </div>
+                    <div id="reset" class="down">
+                      <button type = "button" class="btn btn-primary btnsize">Reset</button>
+                    </div>
+                  </div>
+                </div>
+                  
+            </div>
+
+      </div><!--control panel end--> 
+      <div class="text-center">
+              
+      <script type="text/javascript">
+        //vertical Width:360 Height:560
+        //horizontal Width:640 Height:280
+        /*var ScreenWidth,ScreenHeight;
+        ScreenWidth = $(window).width();
+        ScreenHeight = $(window).height();
+        document.write('ScreenWidth: '+ScreenWidth+' ScreenHeight: '+ ScreenHeight);*/
+      </script>
+
+
+      </div>         
+  </div><!--container end-->   
+
+       
+
+  </body>
+  <style>
+    
+    body,html{
+      /*background image : https://i.imgur.com/dOn2ja2.jpg*/
+      background: url('https://i.imgur.com/dOn2ja2.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+    }
+    .title{
+      color: white;
+    }
+    .navbar{
+      background: rgba(1,1,1,0.6);
+
+    }
+
+
+    .block{
+      min-height: 16rem;
+      background-image: linear-gradient(120deg, rgba(253,251,251,0.6) 0%, rgba(235,237,238,0.6) 100%);
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+      border:1.5px solid grey;
+      border-radius: 8px;
+      
+    }
+
+    .btnsize{
+      width:14rem;
+    }
+    
+    .card-header{
+      background-color: #556295;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-right: 0.5px;
+      color: white;
+    }
+    
+    .center-block{
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .down,.up{
+      padding-top: 5px;
+    }
+    .submitangle{
+      padding-top: 10px;
+    }
+    .btn-primary{
+      border:1px solid #e3e3e3;
+      -moz-border-radius:5px;
+      border-radius:8px;
+      background-color: #a2c0f2;
+      text-shadow:1px 1px 0px #5889ba;
+      text-align:center;
+      
+    }.btn-primary:hover {
+      background-color:#a2c0f2;
+
+    }
+   
+    
+
+
+  </style>
+
+
+</html>
