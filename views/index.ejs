@@ -23,35 +23,37 @@
           $(document).ready(function(){
               
               //Button click action
-                  //
+                  //Axis1
                   $('#turnleft1').click(function(){
                     $.post('/turnleft1');
                   });
                   $('#turnright1').click(function(){
                     $.post('/turnright1');
                   });
-                  //
+                  //Axix2
                   $('#up2').click(function(){
                     $.post('/up2');
                   });
                   $('#down2').click(function(){
                     $.post('/down2');
                   });
-                  //
+                  //Axis3
                   $('#up3').click(function(){
                     $.post('/up3');
                   });
                   $('#down3').click(function(){
                     $.post('/down3');
                   });    
-                  //
+                  //Axis4
                   $('#up4').click(function(){
+                    /*左*/
                     $.post('/up4');
                   });
                   $('#down4').click(function(){
+                    /*右*/
                     $.post('/down4');
                   });
-                  // grasp
+                  //Axis5 grasp
                   $('#Grasp').click(function(){
                     $.post('/Grasp');
                   });
@@ -156,8 +158,8 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="jumbotron-fluid">
                 <div class="title text-center">
-                  <h1>五軸手臂的製作與遠端控制</h1> 
-                  <p>控制面板</p>
+                  <h1><span style="font-family:sans-serif;">Five Axis Robotic Arm Invention and Remote Control</span></h1> 
+                  <p><span style="font-family:sans-serif;">Control Panel</span></p>
                 </div>                 
               </div> 
             </div>
@@ -181,7 +183,7 @@
                       </div>
                       <!--input angle1-->
                       <div class="col-md-8 col-xs-12 submitangle">
-                        <div class="center-block input-group input-group-md input-group-sm">
+                        <div class="center-block input-group input-group-md input-group-sm input-group-lg">
                           <input id="a1" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
                           <span class="input-group-btn">
                           <button id="angle1" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
@@ -211,7 +213,7 @@
                     </div>
                     <!--input angle2-->
                     <div class="col-md-8 col-xs-12 submitangle">
-                      <div class="center-block input-group input-group-md input-group-sm">
+                      <div class="center-block input-group input-group-md input-group-sm input-group-lg">
                         <input id="a2" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
                         <span class="input-group-btn">
                           <button id="angle2" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
@@ -238,7 +240,7 @@
                   </div>
                   <!--input angle3-->
                   <div class="col-md-8 col-xs-12 submitangle">
-                    <div class="center-block input-group input-group-md input-group-sm">
+                    <div class="center-block input-group input-group-md input-group-sm input-group-lg">
                       <input id="a3" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
                       
                       <span class="input-group-btn">
@@ -259,17 +261,17 @@
                 <div class="text-center">
                   <div class="card-header">Axis4</div>
                   <div id="up4" class="up">
-                    <button type = "button" class="btn btn-primary btnsize">上</button>
+                    <button type = "button" class="btn btn-primary btnsize">左</button>
                   </div>
                   <div id="down4" class="down">
-                    <button type = "button" class="btn btn-primary btnsize">下</button>
+                    <button type = "button" class="btn btn-primary btnsize">右</button>
                   </div>
                   <!--input angle4-->
                   <div class="col-md-8 col-xs-12 submitangle">
-                    <div class="center-block input-group input-group-md input-group-sm">
+                    <div class="center-block input-group input-group-md input-group-sm input-group-lg">
                       <input id="a4" type="text" class="col-md-4 col-sm-4 col-xs-4 form-control" placeholder="Enter angle">
                       <span class="input-group-btn">
-                      <button id="angle4" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
+                        <button id="angle4" type = "btn" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
                       </span>                                             
                     </div>
                   </div>
@@ -342,6 +344,32 @@
       background-size: cover;
       -o-background-size: cover;
     }
+    @media screen and  (orientation: portrait) {
+      .col-xs-4{
+        width: 100% !important;
+      }
+
+      .col-sm-6{
+        width: 100%;
+      }
+      
+      .submitangle{
+        margin-left: 65px; 
+        width: 56%;
+      }
+      input[type = text]{
+         width: 10px;
+        -webkit-transition: width .35s ease-in-out;
+        transition: width .35s ease-in-out;
+      }
+      input[type = text]:focus{
+        width: 25px;
+      }
+
+    }
+
+    
+
     .title{
       color: white;
     }
@@ -371,6 +399,7 @@
       border-top-right-radius: 5px;
       margin-right: 0.5px;
       color: white;
+      font-family: sans-serif;
     }
     
     .center-block{
@@ -378,9 +407,10 @@
       margin-left: auto;
       margin-right: auto;
     }
-
+    
     .down,.up{
       padding-top: 5px;
+      font-family: Microsoft JhengHei;
     }
     .submitangle{
       padding-top: 10px;

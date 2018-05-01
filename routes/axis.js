@@ -6,7 +6,7 @@ var message;
 var BluetoothService = require(bluepath);
 
 
-//motor1
+//Axis1
 router.post('/turnleft1', function(req, res, next) {
   console.log("/turnleft1 post");
   BluetoothService.SentData("l1");
@@ -17,7 +17,7 @@ router.post('/turnright1', function(req, res, next) {
   BluetoothService.SentData("r1");
   res.end();
 });
-//motor2
+//Axis2
 router.post('/up2', function(req, res, next) {
   console.log("/up2 post");
   BluetoothService.SentData("u2");
@@ -28,49 +28,52 @@ router.post('/down2', function(req, res, next) {
   BluetoothService.SentData("d2");
   res.end();
 });
-//motor3
+//Axis3
 router.post('/up3', function(req, res, next) {
   console.log("/up3 post");
   BluetoothService.SentData("u3");
   res.end();
 });
 router.post('/down3', function(req, res, next) {
+  
   console.log("/down3 post");
   BluetoothService.SentData("d3");
   res.end();
 });
-//motor4
+//Axis4
 router.post('/up4', function(req, res, next) {
+  /*左*/
   console.log("/up4 post");
   BluetoothService.SentData("u4");
   res.end();
 });
 router.post('/down4', function(req, res, next) {
+  /*右*/
   console.log("/down4 post");
   BluetoothService.SentData("d4");
   res.end();
 });
-//Grasp
+//Axis5 Grasp
 router.post('/Grasp', function(req, res, next) {
   console.log("/Grasp post");
-  BluetoothService.SentData("Grasp");
+  BluetoothService.SentData("G");
   res.end();
 });
 router.post('/Loosen', function(req, res, next) {
   console.log("/Loosen post");
-  BluetoothService.SentData("Loosen");
+  BluetoothService.SentData("L");
   res.end();
 });
 //Macro Function
 router.post('/MacroFun', function(req, res, next) {
   console.log("/MacroFun post");
-  BluetoothService.SentData("MacroFun");
+  BluetoothService.SentData("M");
   res.end();
 });
 //reset
 router.post('/reset', function(req, res, next){
   console.log("/reset post");
-  BluetoothService.SentData("reset");
+  BluetoothService.SentData("re");
   res.end();
 })
 
